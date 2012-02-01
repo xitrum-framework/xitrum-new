@@ -1,0 +1,80 @@
+{
+  // Comment out if you don'nt want to start HTTP server
+  "http": {
+    "port": 8000
+   },
+
+  // Comment out if you don't want to start HTTPS server
+  "https": {
+    "port": 4430,
+
+    // You can use KeyStore Explorer to create self-signed keystore:
+    // http://www.lazgosoftware.com/kse/index.html
+    // More info:
+    // http://wiki.eclipse.org/Jetty/Howto/Configure_SSL
+    "keystore": {
+      "path":                "config/keystore.jks",
+      "password":            "xitrum",
+      "certificatePassword": "xitrum"
+    }
+  },
+
+  // Comment out if you don't use reverse proxy
+  // "reverseProxy": {
+    // // If you run Xitrum behind a proxy, for Xitrum to determine the origin's IP,
+    // // the absolute URL etc., set IP of the proxy here (separated by commas if
+    // // there are many proxies)
+    // //
+    // // Make sure that you config the proxy to set the following headers properly
+    // // (see your proxy documentation):
+    // //   X-Forwarded-Host
+    // //   X-Forwarded-For
+    // //   X-Forwarded-Proto, or X-Forwarded-Scheme, or X-Forwarded-Ssl
+    // "ips": ["127.0.0.1"],
+    // // If you want the site to be http://<domain>/my_site/...
+    // "baseUrl": "/my_site"
+  // },
+
+  // Default Scalate template type, can be: jade, mustache, scaml, ssp
+  "scalate": "jade",
+
+  // clusterMember, superClient, or javaClient
+  // http://www.hazelcast.com/documentation.jsp#Clients
+  //
+  // For clusterMember or superClient mode, see hazelcast_cluster_member_or_super_client.xml
+  // For javaClient mode, see hazelcast_java_client.json
+  "hazelcastMode": "clusterMember",
+
+  "session": {
+    // To store sessions on client side: xitrum.scope.session.CookieSessionStore
+    // To store sessions on server side: xitrum.scope.session.HazelcastSessionStore
+    // "store": "xitrum.scope.session.CookieSessionStore",
+    "store": "xitrum.scope.session.HazelcastSessionStore",
+
+    // If you run multiple sites on the same domain, make sure that there's no
+    // cookie name conflict between sites
+    "cookieName": "_session",
+
+    // Key to encrypt session cookie etc.
+    // Do not use the example below! Use your own!
+    // If you deploy your application to several instances be sure to use the same key!
+    "secureKey": "ajconghoaofuxahoi92chunghiaujivietnamlasdoclapjfltudoil98hanhphucup8"
+  },
+
+  "request": {
+    // Increase if you want to allow bigger file upload
+    // (Google App Engine's limit: 32 MB)
+    "maxSizeInMB": 32,
+
+    "charset": "UTF-8",
+
+    // Sensitive parameters that should not be logged to access log
+    "filteredParams": ["password", "passwordConfirm"]
+  },
+
+  "response": {
+    // Small static files are cached in memory
+    "smallStaticFileSizeInKB":   512,
+    "maxCachedSmallStaticFiles": 1024
+  }
+}
