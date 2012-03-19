@@ -23,7 +23,7 @@ resolvers += "repo.codahale.com" at "http://repo.codahale.com"
 // An implementation of SLF4J must be provided for Xitrum
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.0.0"
 
-libraryDependencies += "tv.cntt" %% "xitrum" % "1.8.4"
+libraryDependencies += "tv.cntt" %% "xitrum" % "1.8.5"
 
 // xgettext i18n translation key string extractor is a compiler plugin ---------
 
