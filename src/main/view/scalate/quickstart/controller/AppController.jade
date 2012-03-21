@@ -16,6 +16,8 @@ html
     link(type="text/css" rel="stylesheet" media="all" href={urlForPublic("css/960/960.css")})
     link(type="text/css" rel="stylesheet" media="all" href={urlForPublic("css/app.css")})
 
+    = jsDefaults
+
   body
     .container_12
       h1
@@ -25,4 +27,4 @@ html
         !~ jsRenderFlash()
       != renderedView
 
-    = jsAtBottom
+    = jsForView
