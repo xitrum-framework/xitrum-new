@@ -7,12 +7,16 @@ name         := "xitrum-new"
 
 version      := "1.0-SNAPSHOT"
 
-scalaVersion := "2.9.1"
+scalaVersion := "2.9.2"
 
 scalacOptions ++= Seq(
   "-deprecation",
   "-unchecked"
 )
+
+// Most Scala projects are published to Sonatype, but Sonatype is not default
+// and it takes several hours to sync from Sonatype to Maven Central
+resolvers += "SonatypeReleases" at "http://oss.sonatype.org/content/repositories/releases/"
 
 // Remove this when Netty 4 is released (this must be put before Xitrum below)
 libraryDependencies += "io.netty" % "netty" % "4.0.0.Alpha1-SNAPSHOT" from "http://cloud.github.com/downloads/ngocdaothanh/xitrum/netty-4.0.0.Alpha1-SNAPSHOT.jar"
@@ -33,7 +37,7 @@ addCompilerPlugin("tv.cntt" %% "xitrum-xgettext" % "1.1")
 
 // xitrum.imperatively uses Scala continuation, also a compiler plugin ---------
 
-addCompilerPlugin("org.scala-lang.plugins" % "continuations" % "2.9.1")
+addCompilerPlugin("org.scala-lang.plugins" % "continuations" % "2.9.2")
 
 scalacOptions += "-P:continuations:enable"
 
