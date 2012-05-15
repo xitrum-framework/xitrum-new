@@ -2,7 +2,7 @@ package quickstart.controller
 
 import xitrum.ErrorController
 
-class Errors extends AppController with ErrorController {
+class Errors extends quickstart.Layout with ErrorController {
   def error404 = errorAction {
     respondView()
   }
