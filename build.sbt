@@ -25,7 +25,7 @@ libraryDependencies += "io.netty" % "netty" % "4.0.0.Alpha1-SNAPSHOT" from "http
 resolvers += "repo.codahale.com" at "http://repo.codahale.com"
 
 // An implementation of SLF4J must be provided for Xitrum
-libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.0.0"
+libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.0.3"
 
 libraryDependencies += "tv.cntt" %% "xitrum" % "1.8.7"
 
