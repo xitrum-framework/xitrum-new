@@ -18,16 +18,13 @@ scalacOptions ++= Seq(
 // and it takes several hours to sync from Sonatype to Maven Central
 resolvers += "SonatypeReleases" at "http://oss.sonatype.org/content/repositories/releases/"
 
-// Remove this when Netty 4 is released (this must be put before Xitrum below)
-libraryDependencies += "io.netty" % "netty" % "4.0.0.Alpha1-SNAPSHOT" from "http://cloud.github.com/downloads/ngocdaothanh/xitrum/netty-4.0.0.Alpha1-SNAPSHOT.jar"
-
 // Xitrum uses Jerkson: https://github.com/codahale/jerkson
 resolvers += "repo.codahale.com" at "http://repo.codahale.com"
 
 // An implementation of SLF4J must be provided for Xitrum
-libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.0.3"
+libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.0.6"
 
-libraryDependencies += "tv.cntt" %% "xitrum" % "1.8.7"
+libraryDependencies += "tv.cntt" %% "xitrum" % "1.9-SNAPSHOT"
 
 // xgettext i18n translation key string extractor is a compiler plugin ---------
 
