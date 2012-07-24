@@ -1,5 +1,5 @@
 // import must be at top of build.sbt, or SBT will complain
-import com.mojolly.scalate.ScalatePlugin._
+import ScalateKeys._
 
 organization := "tv.cntt"
 

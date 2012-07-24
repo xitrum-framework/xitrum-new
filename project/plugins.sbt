@@ -1,3 +1,7 @@
 addSbtPlugin("tv.cntt" % "xitrum-plugin" % "1.3")
 
-libraryDependencies <+= sbtVersion(v => "com.mojolly.scalate" %% "xsbt-scalate-generator" % (v + "-0.1.6"))
+resolvers += Resolver.url("xsbt-scalate-generator",
+  new URL("http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/"))(
+    Resolver.ivyStylePatterns)
+
+addSbtPlugin("com.mojolly.scalate" % "xsbt-scalate-generator" % "0.2.0")
