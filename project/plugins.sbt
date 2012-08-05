@@ -4,4 +4,4 @@ resolvers += Resolver.url("xsbt-scalate-generator",
   new URL("http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/"))(
     Resolver.ivyStylePatterns)
 
-addSbtPlugin("com.mojolly.scalate" % "xsbt-scalate-generator" % "0.2.0")
+addSbtPlugin("com.mojolly.scalate" % "xsbt-scalate-generator" % "0.2.1")
