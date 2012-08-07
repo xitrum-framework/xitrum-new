@@ -1,13 +1,19 @@
 {
-  // Comment out if you don'nt want to start HTTP server
+  // Protect the whole site with basic authentication
+  // "globalBasicAuthentication": {
+    // "realm":    "xitrum",
+    // "username": "xitrum",
+    // "password": "xitrum"
+  // },
+
+  // Comment out if you don't want to start HTTP server
   "http": {
     "port": 8000
-   },
+  },
 
   // Comment out if you don't want to start HTTPS server
   "https": {
     "port": 4430,
-
     // You can use KeyStore Explorer to create self-signed keystore:
     // http://www.lazgosoftware.com/kse/index.html
     // More info:
