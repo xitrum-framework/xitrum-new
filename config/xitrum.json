@@ -1,28 +1,28 @@
 {
-  // Protect the whole site with basic authentication
-  // "globalBasicAuthentication": {
+  // Comment out if you don't want to protect
+  // the whole site with basic authentication
+  // "basicAuth": {
     // "realm":    "xitrum",
     // "username": "xitrum",
     // "password": "xitrum"
   // },
 
-  // Comment out if you don't want to start HTTP server
-  "http": {
-    "port": 8000
+  // Comment out the one you don't want to start
+  "port": {
+    "http":              8000,
+    "https":             4430//,
+    //"flashSocketPolicy": 8430  // If enabled, flash_socket_policy.xml will be returned
   },
 
-  // Comment out if you don't want to start HTTPS server
-  "https": {
-    "port": 4430,
-    // You can use KeyStore Explorer to create self-signed keystore:
-    // http://www.lazgosoftware.com/kse/index.html
-    // More info:
-    // http://wiki.eclipse.org/Jetty/Howto/Configure_SSL
-    "keystore": {
-      "path":                "config/keystore.jks",
-      "password":            "xitrum",
-      "certificatePassword": "xitrum"
-    }
+  // Not used if port.https above is disabled.
+  // You can use KeyStore Explorer to create self-signed keystore:
+  // http://www.lazgosoftware.com/kse/index.html
+  // More info:
+  // http://wiki.eclipse.org/Jetty/Howto/Configure_SSL
+  "keystore": {
+    "path":                "config/keystore.jks",
+    "password":            "xitrum",
+    "certificatePassword": "xitrum"
   },
 
   // Comment out if you don't use reverse proxy
