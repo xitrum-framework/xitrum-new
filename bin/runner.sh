@@ -17,7 +17,7 @@ cd "$ROOT_DIR"
 #
 # Include ROOT_DIR to do "ps aux | grep java" to get pid easier when
 # starting multiple processes from different directories
-CLASS_PATH="$ROOT_DIR/lib/slf4j-api-1.6.4.jar:lib/*:config"
+CLASS_PATH="$ROOT_DIR/lib/slf4j-api-1.6.6.jar:lib/*:config"
 
 # Use exec to be compatible with daemontools:
 # http://cr.yp.to/daemontools.html
