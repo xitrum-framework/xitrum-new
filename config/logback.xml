@@ -18,6 +18,7 @@
   </appender>
 
   <!-- Set to INFO to avoid noisy log -->
+  <logger name="org.jboss.serial" level="INFO"/>
   <logger name="com.hazelcast" level="INFO"/>
 
   <!-- Should be commented out for speed when running in production mode -->
