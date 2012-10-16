@@ -17,10 +17,13 @@
     </rollingPolicy>
   </appender>
 
+  <!-- Set to INFO to avoid noisy log -->
+  <logger name="com.hazelcast" level="INFO"/>
+
   <!-- Should be commented out for speed when running in production mode -->
   <logger name="xitrum" level="DEBUG"/>
 
-  <root level="INFO">
+  <root level="DEBUG">
     <!-- Should be commented out for speed when running in production mode -->
     <appender-ref ref="CONSOLE"/>
 
