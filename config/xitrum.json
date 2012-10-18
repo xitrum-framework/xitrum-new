@@ -1,11 +1,11 @@
 {
   // Comment out if you don't want to protect
   // the whole site with basic authentication
-  // "basicAuth": {
-    // "realm":    "xitrum",
-    // "username": "xitrum",
-    // "password": "xitrum"
-  // },
+  //"basicAuth": {
+    //"realm":    "xitrum",
+    //"username": "xitrum",
+    //"password": "xitrum"
+  //},
 
   // Comment out the one you don't want to start
   "port": {
@@ -26,20 +26,20 @@
   },
 
   // Comment out if you don't use reverse proxy
-  // "reverseProxy": {
-    // // If you run Xitrum behind a proxy, for Xitrum to determine the origin's IP,
-    // // the absolute URL etc., set IP of the proxy here (separated by commas if
-    // // there are many proxies)
-    // //
-    // // Make sure that you config the proxy to set the following headers properly
-    // // (see your proxy documentation):
-    // //   X-Forwarded-Host
-    // //   X-Forwarded-For
-    // //   X-Forwarded-Proto, or X-Forwarded-Scheme, or X-Forwarded-Ssl
-    // "ips": ["127.0.0.1"],
-    // // If you want the site to be http://<domain>/my_site/...
-    // "baseUrl": "/my_site"
-  // },
+  //"reverseProxy": {
+    // If you run Xitrum behind a proxy, for Xitrum to determine the origin's IP,
+    // the absolute URL etc., set IP of the proxies here. For security, only proxies
+    // with IPs set here are allowed. Remember to config the proxy to set the
+    // following headers properly (see your proxy documentation):
+    //   X-Forwarded-Host
+    //   X-Forwarded-For
+    //   X-Forwarded-Proto, or X-Forwarded-Scheme, or X-Forwarded-Ssl
+    //"ips": ["127.0.0.1"],
+
+    // If you want the site to be http://<domain>/my_site/...
+    // Otherwise set to empty string
+    //"baseUrl": "/my_site"
+  //},
 
   // Default Scalate template type, can be: jade, mustache, scaml, ssp
   "scalate": "jade",
