@@ -36,8 +36,8 @@
     //   X-Forwarded-Proto, or X-Forwarded-Scheme, or X-Forwarded-Ssl
     //"ips": ["127.0.0.1"],
 
-    // If you want the site to be http://<domain>/my_site/...
-    // Otherwise set to empty string
+    // Set baseUrl to "/my_site" if you want the URL to be http://<domain>/my_site/...
+    // Otherwise set it to empty string
     //"baseUrl": "/my_site"
   //},
 
