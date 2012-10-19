@@ -79,8 +79,18 @@
   },
 
   "response": {
-    // Small static files are cached in memory
-    "smallStaticFileSizeInKB":   512,
-    "maxCachedSmallStaticFiles": 1024
+    // Small static files are cached in memory.
+    // Files bigger than maxSizeInKBOfCachedStaticFiles will not be cached in memory.
+    "maxSizeInKBOfCachedStaticFiles": 512,
+    "maxNumberOfCachedStaticFiles":   1024,
+
+    // true:  ETag response header is set for  static files.
+    //        Before reusing the files, clients must send requests to server
+    //        to revalidate if the files have been changed. Use this when you
+    //        create HTML directly with static files.
+    // false: Response headers are set so that clients will cache static files
+    //        for one year. Use this when you create HTML from templates and use
+    //        urlForPublic("path/to/static/file") in templates.
+    "clientMustRevalidateStaticFiles": true
   }
 }
