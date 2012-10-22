@@ -21,11 +21,9 @@
   <logger name="com.hazelcast" level="INFO"/>
   <logger name="org.fusesource.scalate" level="INFO"/>
 
-  <!-- Should be commented out for speed when running in production mode -->
-  <logger name="xitrum" level="DEBUG"/>
-
+  <!-- Should be set to INFO in production mode for speed  -->
   <root level="DEBUG">
-    <!-- Should be commented out for speed when running in production mode -->
+    <!-- Should be commented out in production mode for speed -->
     <appender-ref ref="CONSOLE"/>
 
     <appender-ref ref="FILE"/>
