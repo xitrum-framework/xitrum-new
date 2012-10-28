@@ -20,10 +20,13 @@ resolvers += "SonatypeReleases" at "http://oss.sonatype.org/content/repositories
 
 libraryDependencies += "tv.cntt" %% "xitrum" % "1.9.8"
 
-// Xitrum uses Jerkson: https://github.com/codahale/jerkson
+// Xitrum uses Akka
+resolvers += "Typesafe" at "http://repo.typesafe.com/typesafe/releases/"
+
+// Xitrum uses Jerkson
 resolvers += "repo.codahale.com" at "http://repo.codahale.com"
 
-// An implementation of SLF4J must be provided for Xitrum
+// Xitrum uses SLF4J, an implementation of SLF4J is needed
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.0.7"
 
 // xgettext i18n translation key string extractor is a compiler plugin ---------
