@@ -27,7 +27,7 @@ resolvers += "Typesafe" at "http://repo.typesafe.com/typesafe/releases/"
 resolvers += "repo.codahale.com" at "http://repo.codahale.com"
 
 // Xitrum uses SLF4J, an implementation of SLF4J is needed
-libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.0.7"
+libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.0.9"
 
 // xgettext i18n translation key string extractor is a compiler plugin ---------
 
