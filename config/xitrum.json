@@ -44,18 +44,16 @@
   // Default Scalate template type, can be: jade, mustache, scaml, ssp
   "scalate": "jade",
 
-  // clusterMember, superClient, or javaClient
-  // http://www.hazelcast.com/documentation.jsp#Clients
-  //
-  // For clusterMember or superClient mode, see hazelcast_cluster_member_or_super_client.xml
+  // clusterMember, liteMember, or javaClient
+  // For clusterMember or liteMember mode, see hazelcast_cluster_member_or_super_client.xml
   // For javaClient mode, see hazelcast_java_client.json
   "hazelcastMode": "clusterMember",
 
   "session": {
     // To store sessions on client side: xitrum.scope.session.CookieSessionStore
     // To store sessions on server side: xitrum.scope.session.HazelcastSessionStore
-    // "store": "xitrum.scope.session.CookieSessionStore",
-    "store": "xitrum.scope.session.HazelcastSessionStore",
+    "store": "xitrum.scope.session.CookieSessionStore",
+    //"store": "xitrum.scope.session.HazelcastSessionStore",
 
     // If you run multiple sites on the same domain, make sure that there's no
     // cookie name conflict between sites
