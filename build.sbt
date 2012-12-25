@@ -20,9 +20,6 @@ resolvers += "SonatypeReleases" at "http://oss.sonatype.org/content/repositories
 
 libraryDependencies += "tv.cntt" %% "xitrum" % "1.11"
 
-// Xitrum uses Akka
-resolvers += "Typesafe" at "http://repo.typesafe.com/typesafe/releases/"
-
 // Xitrum uses Jerkson
 resolvers += "repo.codahale.com" at "http://repo.codahale.com"
 
