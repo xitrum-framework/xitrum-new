@@ -7,7 +7,7 @@ name         := "xitrum-new"
 
 version      := "1.0-SNAPSHOT"
 
-scalaVersion := "2.9.2"
+scalaVersion := "2.10.0"
 
 scalacOptions ++= Seq(
   "-deprecation",
@@ -18,7 +18,7 @@ scalacOptions ++= Seq(
 // and it takes several hours to sync from Sonatype to Maven Central
 resolvers += "SonatypeReleases" at "http://oss.sonatype.org/content/repositories/releases/"
 
-libraryDependencies += "tv.cntt" %% "xitrum" % "1.12"
+libraryDependencies += "tv.cntt" %% "xitrum" % "1.13"
 
 // Xitrum uses SLF4J, an implementation of SLF4J is needed
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.0.9"
@@ -31,7 +31,7 @@ addCompilerPlugin("tv.cntt" %% "xitrum-xgettext" % "1.1")
 
 // xitrum.imperatively uses Scala continuation, also a compiler plugin ---------
 
-addCompilerPlugin("org.scala-lang.plugins" % "continuations" % "2.9.2")
+addCompilerPlugin("org.scala-lang.plugins" % "continuations" % "2.10.0")
 
 scalacOptions += "-P:continuations:enable"
 
@@ -39,9 +39,11 @@ scalacOptions += "-P:continuations:enable"
 
 seq(scalateSettings:_*)
 
-scalateTemplateDirectory in Compile <<= (baseDirectory) { _ / "src/main/view" }
-
-scalateBindings += Binding("helper", "xitrum.Controller", true)
+scalateTemplateConfig in Compile := Seq(TemplateConfig(
+  file("src") / "main" / "scalate",
+  Seq(),
+  Seq(Binding("helper", "xitrum.Controller", true))
+))
 
 // Put config directory in classpath for easier development --------------------
 
