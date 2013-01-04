@@ -27,7 +27,9 @@ libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.0.9"
 
 autoCompilerPlugins := true
 
-addCompilerPlugin("tv.cntt" %% "xitrum-xgettext" % "1.1")
+addCompilerPlugin("tv.cntt" %% "xgettext" % "1.0")
+
+scalacOptions += "-P:xgettext:xitrum.I18n"
 
 // xitrum.imperatively uses Scala continuation, also a compiler plugin ---------
 
