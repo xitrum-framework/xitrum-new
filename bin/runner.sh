@@ -12,12 +12,9 @@ else
 fi
 cd "$ROOT_DIR"
 
-# Put slf4j-api to the front to avoid error (not always occurs):
-# The requested version ... by your slf4j binding is not compatible with [...]
-#
 # Include ROOT_DIR to do "ps aux | grep java" to get pid easier when
 # starting multiple processes from different directories
-CLASS_PATH="$ROOT_DIR/lib/slf4j-api-1.7.2.jar:lib/*:config"
+CLASS_PATH="$ROOT_DIR/lib/*:config"
 
 # Use exec to be compatible with daemontools:
 # http://cr.yp.to/daemontools.html
