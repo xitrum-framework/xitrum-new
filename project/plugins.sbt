@@ -5,4 +5,4 @@ addSbtPlugin("tv.cntt" % "xitrum-plugin" % "1.3")
 addSbtPlugin("com.mojolly.scalate" % "xsbt-scalate-generator" % "0.4.2")
 
 // sbt/sbt eclipse
-addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.1.1")
+addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.1.2")
