@@ -41,6 +41,7 @@ scalacOptions += "-P:continuations:enable"
 
 libraryDependencies += "tv.cntt" %% "xitrum-scalate" % "1.0"
 
+// Precompile Scalate
 seq(scalateSettings:_*)
 
 scalateTemplateConfig in Compile := Seq(TemplateConfig(
