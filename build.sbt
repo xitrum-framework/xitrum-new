@@ -18,10 +18,10 @@ scalacOptions ++= Seq(
 // and it takes several hours to sync from Sonatype to Maven Central
 resolvers += "SonatypeReleases" at "http://oss.sonatype.org/content/repositories/releases/"
 
-libraryDependencies += "tv.cntt" %% "xitrum" % "1.20"
+libraryDependencies += "tv.cntt" %% "xitrum" % "1.21"
 
 // Xitrum uses SLF4J, an implementation of SLF4J is needed
-libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.0.10"
+libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.0.11"
 
 // xgettext i18n translation key string extractor is a compiler plugin ---------
 
@@ -37,7 +37,9 @@ addCompilerPlugin("org.scala-lang.plugins" % "continuations" % "2.10.1")
 
 scalacOptions += "-P:continuations:enable"
 
-// Precompile Scalate ----------------------------------------------------------
+// Template engine for Xitrum --------------------------------------------------
+
+libraryDependencies += "tv.cntt" %% "xitrum-scalate" % "1.0"
 
 seq(scalateSettings:_*)
 
