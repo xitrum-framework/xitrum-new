@@ -44,7 +44,7 @@ libraryDependencies += "tv.cntt" %% "xitrum-scalate" % "1.0"
 seq(scalateSettings:_*)
 
 scalateTemplateConfig in Compile := Seq(TemplateConfig(
-  file("src") / "main" / "scalate",  // See scalateDir in config/xitrum.conf
+  file("src") / "main" / "scalate",  // See config/scalate.conf
   Seq(),
   Seq(Binding("helper", "xitrum.Controller", true))
 ))
