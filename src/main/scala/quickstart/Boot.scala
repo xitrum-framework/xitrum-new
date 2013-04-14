@@ -1,13 +1,9 @@
 package quickstart
 
-import xitrum.handler.Server
-import xitrum.routing.Routes
-
-import quickstart.controller.Errors
+import xitrum.Server
 
 object Boot {
   def main(args: Array[String]) {
-    Routes.error = classOf[Errors]
     Server.start()
   }
 }
