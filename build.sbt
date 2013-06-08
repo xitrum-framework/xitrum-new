@@ -7,7 +7,7 @@ name         := "xitrum-new"
 
 version      := "1.0-SNAPSHOT"
 
-scalaVersion := "2.10.1"
+scalaVersion := "2.10.2"
 
 scalacOptions ++= Seq(
   "-deprecation",
@@ -34,7 +34,7 @@ scalacOptions += "-P:xgettext:xitrum.I18n"
 
 // xitrum.imperatively uses Scala continuation, also a compiler plugin ---------
 
-addCompilerPlugin("org.scala-lang.plugins" % "continuations" % "2.10.1")
+addCompilerPlugin("org.scala-lang.plugins" % "continuations" % "2.10.2")
 
 scalacOptions += "-P:continuations:enable"
 
