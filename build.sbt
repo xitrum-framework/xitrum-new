@@ -34,7 +34,10 @@ scalacOptions += "-P:xgettext:xitrum.I18n"
 
 // xitrum.imperatively uses Scala continuation, also a compiler plugin ---------
 
-addCompilerPlugin("org.scala-lang.plugins" % "continuations" % "2.10.2")
+// https://groups.google.com/forum/?fromgroups#!topic/simple-build-tool/ReZvT14noxU
+libraryDependencies <+= scalaVersion { sv =>
+  compilerPlugin("org.scala-lang.plugins" % "continuations" % sv)
+}
 
 scalacOptions += "-P:continuations:enable"
 
