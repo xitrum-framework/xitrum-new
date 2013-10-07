@@ -12,7 +12,7 @@ else
 fi
 cd "$ROOT_DIR"
 
-# Include ROOT_DIR to do "ps aux | grep java" to get pid easier when
+# Include ROOT_DIR to do "ps aux | grep java" to find this pid easier when
 # starting multiple processes from different directories
 CLASS_PATH="$ROOT_DIR/lib/*:config"
 
