@@ -21,7 +21,7 @@
   <logger name="com.hazelcast" level="INFO"/>
   <logger name="org.fusesource.scalate" level="INFO"/>
 
-  <!-- Should be set to INFO in production mode for speed  -->
+  <!-- Should be set to INFO or WARN in production mode for speed  -->
   <root level="DEBUG">
     <!-- Should be commented out in production mode for speed -->
     <appender-ref ref="CONSOLE"/>
