@@ -1,7 +1,7 @@
 Xitrum projects require Java 7+.
 
-To create a new `Xitrum <http://ngocdaothanh.github.com/xitrum>`_ project, download
-`xitrum-new.zip <https://github.com/ngocdaothanh/xitrum-new/archive/master.zip>`_,
+To create a new `Xitrum <http://xitrum-framework.github.com/xitrum>`_ project, download
+`xitrum-new.zip <https://github.com/xitrum-framework/xitrum-new/archive/master.zip>`_,
 unzip, then run:
 
 ::
