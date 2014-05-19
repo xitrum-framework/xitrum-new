@@ -10,3 +10,10 @@ unzip, then run:
 
 Now you have a new empty skeleton project running at
 http://localhost:8000/ and https://localhost:4430/
+
+To generate Eclipse or IntelliJ project:
+
+::
+
+  sbt/sbt eclipse
+  sbt/sbt gen-idea
