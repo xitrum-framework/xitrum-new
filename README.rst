@@ -11,6 +11,8 @@ unzip, then run:
 Now you have a new empty skeleton project running at
 http://localhost:8000/ and https://localhost:4430/
 
+.. image:: screenshot.png
+
 To generate Eclipse or IntelliJ project:
 
 ::
