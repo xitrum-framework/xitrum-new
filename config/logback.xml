@@ -1,32 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- http://logback.qos.ch/manual/configuration.html -->
-<configuration scan="true" scanPeriod="30 seconds">
-  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-    <encoder>
-      <pattern>[%level] %m%n</pattern>
-    </encoder>
-  </appender>
-
-  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>./log/xitrum.log</file>
-    <encoder>
-      <pattern>[%level] [%d{yy-MM-dd HH:mm:ss}] %c{1}: %m%n</pattern>
-    </encoder>
-    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>./log/xitrum.log.%d{yy-MM-dd}</fileNamePattern>
-    </rollingPolicy>
-  </appender>
-
+<!-- Doc: http://logback.qos.ch/manual/configuration.html -->
+<!-- This config file will be automatically reloaded every minute -->
+<configuration scan="true" scanPeriod="60 seconds">
   <!-- Set to INFO to avoid noisy log -->
   <logger name="io.netty" level="INFO"/>
   <logger name="com.hazelcast" level="INFO"/>
   <logger name="org.fusesource.scalate" level="INFO"/>
 
-  <!-- Should be set to INFO or WARN in production mode for speed  -->
-  <root level="DEBUG">
-    <!-- Should be commented out in production mode for speed -->
-    <appender-ref ref="CONSOLE"/>
+  <!-- Log to console in development mode -->
+  <if condition='!property("xitrum.mode").contains("production")'>
+    <then>
+      <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+          <pattern>[%level] %m%n</pattern>
+        </encoder>
+      </appender>
 
-    <appender-ref ref="FILE"/>
-  </root>
+      <!-- Set to TRACE to see network transmission -->
+      <root level="DEBUG">
+        <appender-ref ref="CONSOLE"/>
+      </root>
+    </then>
+  </if>
+
+  <!-- Log to file in production mode -->
+  <if condition='property("xitrum.mode").contains("production")'>
+    <then>
+      <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./log/xitrum.log</file>
+        <encoder>
+          <pattern>[%level] [%d{yy-MM-dd HH:mm:ss}] %c{1}: %m%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+          <fileNamePattern>./log/xitrum.log.%d{yy-MM}</fileNamePattern>
+        </rollingPolicy>
+      </appender>
+
+      <!-- Set to TRACE to see network transmission -->
+      <root level="INFO">
+        <appender-ref ref="FILE"/>
+      </root>
+    </then>
+  </if>
 </configuration>
