@@ -14,7 +14,7 @@ javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
 
 //------------------------------------------------------------------------------
 
-libraryDependencies += "tv.cntt" %% "xitrum" % "3.14"
+libraryDependencies += "tv.cntt" %% "xitrum" % "3.15"
 
 // Xitrum uses SLF4J, an implementation of SLF4J is needed
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.2"
@@ -22,11 +22,11 @@ libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.2"
 // For writing condition in logback.xml
 libraryDependencies += "org.codehaus.janino" % "janino" % "2.6.1"
 
-libraryDependencies += "org.webjars" % "bootstrap" % "3.1.1-1"
+libraryDependencies += "org.webjars" % "bootstrap" % "3.2.0"
 
 // Scalate template engine config for Xitrum -----------------------------------
 
-libraryDependencies += "tv.cntt" %% "xitrum-scalate" % "2.0"
+libraryDependencies += "tv.cntt" %% "xitrum-scalate" % "2.1"
 
 // Precompile Scalate templates
 seq(scalateSettings:_*)
