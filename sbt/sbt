@@ -1,1 +1,16 @@
-java -javaagent:`dirname $0`/agent7-1.0.jar -Xms256M -Xmx512M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384M -jar `dirname $0`/sbt-launch-0.13.6.jar "$@"
+#!/bin/bash
+get_java_cmd() {
+  if [[ -n "$JAVA_HOME" ]] && [[ -x "$JAVA_HOME/bin/java" ]];  then
+    echo "$JAVA_HOME/bin/java"
+  else
+    echo "java"
+  fi
+}
+declare -r java_cmd=$(get_java_cmd)
+declare -r java_version=$("$java_cmd" -version 2>&1 | awk -F '"' '/version/ {print $2}')
+if [[ "${java_version}" > "1.8" ]]; then
+  memopts="-XX:MaxMetaspaceSize=384M"
+else
+  memopts="-XX:MaxPermSize=384M"
+fi
+$java_cmd -javaagent:`dirname $0`/agent7-1.0.jar -Xms256M -Xmx512M -Xss1M -XX:+CMSClassUnloadingEnabled $memopts -jar `dirname $0`/sbt-launch-0.13.6.jar "$@"

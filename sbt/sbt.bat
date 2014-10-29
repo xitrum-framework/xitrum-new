@@ -1,2 +1,22 @@
 set SCRIPT_DIR=%~dp0
-java -javaagent:"%SCRIPT_DIR%agent7-1.0.jar" -Xms256M -Xmx512M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384M -jar "%SCRIPT_DIR%sbt-launch-0.13.6.jar" %*
+
+for /f "tokens=3" %%g in ('java -version 2^>^&1 ^| findstr /i "version"') do (
+    set JAVA_VERSION=%%g
+)
+
+set JAVA_VERSION=%JAVA_VERSION:"=%
+
+for /f "delims=. tokens=1-3" %%v in ("%JAVA_VERSION%") do (
+    set MAJOR=%%v
+    set MINOR=%%w
+    set BUILD=%%x
+
+    set META_SIZE=-XX:MaxMetaspaceSize=384M
+    if "!MINOR!" LSS "8" (
+      set META_SIZE=-XX:MaxPermSize=384M
+    )
+
+    set MEM_OPTS=!META_SIZE!
+)
+
+java -javaagent:"%SCRIPT_DIR%agent7-1.0.jar" -Xms256M -Xmx512M -Xss1M -XX:+CMSClassUnloadingEnabled %MEM_OPTS% -jar "%SCRIPT_DIR%sbt-launch-0.13.6.jar" %*
