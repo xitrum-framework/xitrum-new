@@ -21,7 +21,8 @@ name         := "xitrum-new"
 
 version      := "1.0-SNAPSHOT"
 
-scalaVersion := "2.10.3"
+scalaVersion := "2.11.2"
+//scalaVersion := "2.10.4"
 
 scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
 
@@ -29,16 +30,16 @@ scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
 // and it takes several hours to sync from Sonatype to Maven Central
 resolvers += "SonatypeReleases" at "http://oss.sonatype.org/content/repositories/releases/"
 
-libraryDependencies += "tv.cntt" %% "xitrum" % "2.15"
+libraryDependencies += "tv.cntt" %% "xitrum" % "2.16-SNAPSHOT"
 
 // Xitrum uses SLF4J, an implementation of SLF4J is needed
-libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.0.13"
+libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.2"
 
 // xgettext i18n translation key string extractor is a compiler plugin ---------
 
 autoCompilerPlugins := true
 
-addCompilerPlugin("tv.cntt" %% "xgettext" % "1.0")
+addCompilerPlugin("tv.cntt" %% "xgettext" % "1.3")
 
 scalacOptions += "-P:xgettext:xitrum.I18n"
 
