@@ -4,7 +4,7 @@ name         := "xitrum-new"
 
 version      := "1.0-SNAPSHOT"
 
-scalaVersion := "2.11.2"
+scalaVersion := "2.11.4"
 //scalaVersion := "2.10.4"
 
 scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
@@ -14,19 +14,19 @@ javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
 
 //------------------------------------------------------------------------------
 
-libraryDependencies += "tv.cntt" %% "xitrum" % "3.18"
+libraryDependencies += "tv.cntt" %% "xitrum" % "3.19"
 
 // Xitrum uses SLF4J, an implementation of SLF4J is needed
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.2"
 
 // For writing condition in logback.xml
-libraryDependencies += "org.codehaus.janino" % "janino" % "2.7.5"
+libraryDependencies += "org.codehaus.janino" % "janino" % "2.7.6"
 
-libraryDependencies += "org.webjars" % "bootstrap" % "3.2.0"
+libraryDependencies += "org.webjars" % "bootstrap" % "3.3.1"
 
 // Scalate template engine config for Xitrum -----------------------------------
 
-libraryDependencies += "tv.cntt" %% "xitrum-scalate" % "2.2"
+libraryDependencies += "tv.cntt" %% "xitrum-scalate" % "2.3"
 
 // Precompile Scalate templates
 seq(scalateSettings:_*)
@@ -41,7 +41,7 @@ ScalateKeys.scalateTemplateConfig in Compile := Seq(TemplateConfig(
 
 autoCompilerPlugins := true
 
-addCompilerPlugin("tv.cntt" %% "xgettext" % "1.2")
+addCompilerPlugin("tv.cntt" %% "xgettext" % "1.3")
 
 scalacOptions += "-P:xgettext:xitrum.I18n"
 
