@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 get_java_cmd() {
   if [[ -n "$JAVA_HOME" ]] && [[ -x "$JAVA_HOME/bin/java" ]];  then
