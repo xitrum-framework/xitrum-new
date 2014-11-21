@@ -13,4 +13,4 @@ if [[ "${java_version}" > "1.8" ]]; then
 else
   memopts="-XX:MaxPermSize=384M"
 fi
-$java_cmd -javaagent:`dirname $0`/agent7-1.0.jar -Xms256M -Xmx512M -Xss1M -XX:+CMSClassUnloadingEnabled $memopts -jar `dirname $0`/sbt-launch-0.13.6.jar "$@"
+$java_cmd -javaagent:`dirname $0`/agent7-1.0.jar -Xms256M -Xmx512M -Xss1M -XX:+CMSClassUnloadingEnabled $memopts -jar `dirname $0`/sbt-launch-0.13.7.jar "$@"
