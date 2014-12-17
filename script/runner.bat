@@ -9,9 +9,9 @@ for /f "delims=. tokens=1-3" %%v in ("%JAVA_VERSION%") do (
     set MINOR=%%w
     set BUILD=%%x
 
-    set META_SIZE=-XX:MaxMetaspaceSize=128m
+    set META_SIZE=-XX:MaxMetaspaceSize=384m
     if "!MINOR!" LSS "8" (
-      set META_SIZE=-XX:MaxPermSize=128m
+      set META_SIZE=-XX:MaxPermSize=384m
     )
 
     set MEM_OPTS=!META_SIZE!
