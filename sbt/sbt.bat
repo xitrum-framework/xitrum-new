@@ -1,3 +1,5 @@
+@echo off
+
 set SCRIPT_DIR=%~dp0
 
 for /f "tokens=3" %%g in ('java -version 2^>^&1 ^| findstr /i "version"') do (
@@ -12,11 +14,9 @@ for /f "delims=. tokens=1-3" %%v in ("%JAVA_VERSION%") do (
     set BUILD=%%x
 
     set META_SIZE=-XX:MaxMetaspaceSize=384M
-    if "!MINOR!" LSS "8" (
+    if %MINOR% LSS 8 (
       set META_SIZE=-XX:MaxPermSize=384M
     )
-
-    set MEM_OPTS=!META_SIZE!
 )
 
-java -javaagent:"%SCRIPT_DIR%agent7-1.0.jar" -Xms256M -Xmx512M -Xss1M -XX:+CMSClassUnloadingEnabled %MEM_OPTS% -jar "%SCRIPT_DIR%sbt-launch-0.13.7.jar" %*
+java -javaagent:"%SCRIPT_DIR%agent7-1.0.jar" -Xms256M -Xmx512M -Xss1M -XX:+CMSClassUnloadingEnabled %META_SIZE% -jar "%SCRIPT_DIR%sbt-launch-0.13.7.jar" %*
