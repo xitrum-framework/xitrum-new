@@ -19,4 +19,4 @@ for /f "delims=. tokens=1-3" %%v in ("%JAVA_VERSION%") do (
     )
 )
 
-java -javaagent:"%SCRIPT_DIR%agent7-1.0.jar" -Xms256M -Xmx512M -Xss1M -XX:+CMSClassUnloadingEnabled %META_SIZE% -jar "%SCRIPT_DIR%sbt-launch-0.13.7.jar" %*
+java -javaagent:"%SCRIPT_DIR%agent7-1.0.jar" -Xms256M -Xmx512M -Xss1M -XX:+CMSClassUnloadingEnabled %META_SIZE% -jar "%SCRIPT_DIR%sbt-launch-0.13.8.jar" %*
