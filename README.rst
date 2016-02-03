@@ -13,9 +13,8 @@ http://localhost:8000/ and https://localhost:4430/
 
 .. image:: screenshot.png
 
-To generate Eclipse or IntelliJ project:
+To generate Eclipse project:
 
 ::
 
   sbt/sbt eclipse
-  sbt/sbt gen-idea
