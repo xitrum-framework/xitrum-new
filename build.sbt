@@ -26,7 +26,6 @@ libraryDependencies += "tv.cntt" %% "xitrum-scalate" % "2.6.0"
 
 // Precompile Scalate templates
 Seq(scalateSettings:_*)
-
 ScalateKeys.scalateTemplateConfig in Compile := Seq(TemplateConfig(
   baseDirectory.value / "src" / "main" / "scalate",
   Seq(),
