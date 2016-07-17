@@ -18,7 +18,7 @@ libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.7"
 // For writing condition in logback.xml
 libraryDependencies += "org.codehaus.janino" % "janino" % "2.7.8"
 
-libraryDependencies += "org.webjars.bower" % "bootstrap" % "3.3.6"
+libraryDependencies += "org.webjars.bower" % "bootstrap-css" % "3.3.6"
 
 // Scalate template engine config for Xitrum -----------------------------------
 
