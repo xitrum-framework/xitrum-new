@@ -22,7 +22,7 @@ libraryDependencies += "org.webjars.bower" % "bootstrap-css" % "3.3.6"
 
 // Scalate template engine config for Xitrum -----------------------------------
 
-libraryDependencies += "tv.cntt" %% "xitrum-scalate" % "2.6.0"
+libraryDependencies += "tv.cntt" %% "xitrum-scalate" % "2.6.1"
 
 // Precompile Scalate templates
 Seq(scalateSettings:_*)
