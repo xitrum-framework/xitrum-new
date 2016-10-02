@@ -10,13 +10,13 @@ javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 //------------------------------------------------------------------------------
 
-libraryDependencies += "tv.cntt" %% "xitrum" % "3.28.0"
+libraryDependencies += "tv.cntt" %% "xitrum" % "3.28.1"
 
 // Xitrum uses SLF4J, an implementation of SLF4J is needed
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.7"
 
 // For writing condition in logback.xml
-libraryDependencies += "org.codehaus.janino" % "janino" % "3.0.0"
+libraryDependencies += "org.codehaus.janino" % "janino" % "3.0.6"
 
 libraryDependencies += "org.webjars.bower" % "bootstrap-css" % "3.3.6"
 
