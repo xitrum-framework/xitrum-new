@@ -5,4 +5,4 @@ addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.3.0")
 addSbtPlugin("tv.cntt" % "xitrum-package" % "1.9")
 
 // For precompiling Scalate templates in the compile phase of SBT
-addSbtPlugin("com.mojolly.scalate" % "xsbt-scalate-generator" % "0.5.0")
+addSbtPlugin("org.scalatra.scalate" % "sbt-scalate-precompiler" % "1.8.0.1")
