@@ -1,4 +1,4 @@
-Xitrum projects require Java 7+.
+Xitrum projects require Java 8+.
 
 To create a new `Xitrum <http://xitrum-framework.github.io/>`_ project,
 download project skeleton `xitrum-new.zip <https://github.com/xitrum-framework/xitrum-new/archive/master.zip>`_,
