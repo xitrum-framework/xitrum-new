@@ -20,4 +20,4 @@ CLASS_PATH="$ROOT_DIR/lib/*:config"
 
 # Use exec to be compatible with daemontools:
 # http://cr.yp.to/daemontools.html
-exec java $JAVA_OPTS -cp $CLASS_PATH $@
+exec java $JAVA_OPTS -cp "$CLASS_PATH" "$@"
