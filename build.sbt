@@ -22,10 +22,10 @@ libraryDependencies += "org.webjars.bower" % "bootstrap-css" % "3.3.6"
 
 // Scalate template engine config for Xitrum -----------------------------------
 
-libraryDependencies += "tv.cntt" %% "xitrum-scalate" % "2.8.0"
+libraryDependencies += "tv.cntt" %% "xitrum-scalate" % "2.8.1"
 
 // Precompile Scalate templates
-scalateSettings
+import org.fusesource.scalate.ScalatePlugin._
 ScalateKeys.scalateTemplateConfig in Compile := Seq(TemplateConfig(
   baseDirectory.value / "src" / "main" / "scalate",
   Seq(),
@@ -41,10 +41,10 @@ scalacOptions += "-P:xgettext:xitrum.I18n"
 // Put config directory in classpath for easier development --------------------
 
 // For "sbt console"
-unmanagedClasspath in Compile += Attributed.blank(baseDirectory.value / "config")
+unmanagedClasspath in Compile += baseDirectory.value / "config"
 
-// For "sbt run"
-unmanagedClasspath in Runtime += Attributed.blank(baseDirectory.value / "config")
+// For "sbt fgRun"
+unmanagedClasspath in Runtime += baseDirectory.value / "config"
 
 // Copy these to target/xitrum when sbt xitrum-package is run
 XitrumPackage.copy("config", "public", "script")

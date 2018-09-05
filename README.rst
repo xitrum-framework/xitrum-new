@@ -6,7 +6,7 @@ unzip, then run:
 
 ::
 
-  sbt/sbt run
+  sbt/sbt fgRun
 
 Now you have a new empty skeleton project running at
 http://localhost:8000/ and https://localhost:4430/
