@@ -2,7 +2,7 @@ organization := "tv.cntt"
 name         := "xitrum-new"
 version      := "1.0-SNAPSHOT"
 
-scalaVersion := "2.12.6"
+scalaVersion := "2.12.7"
 scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
 
 // Xitrum requires Java 8
@@ -10,13 +10,13 @@ javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 //------------------------------------------------------------------------------
 
-libraryDependencies += "tv.cntt" %% "xitrum" % "3.28.11"
+libraryDependencies += "tv.cntt" %% "xitrum" % "3.28.12"
 
 // Xitrum uses SLF4J, an implementation of SLF4J is needed
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3"
 
 // For writing condition in logback.xml
-libraryDependencies += "org.codehaus.janino" % "janino" % "3.0.9"
+libraryDependencies += "org.codehaus.janino" % "janino" % "3.0.10"
 
 libraryDependencies += "org.webjars.bower" % "bootstrap-css" % "3.3.6"
 
@@ -26,8 +26,9 @@ libraryDependencies += "tv.cntt" %% "xitrum-scalate" % "2.8.1"
 
 // Precompile Scalate templates
 import org.fusesource.scalate.ScalatePlugin._
+scalateSettings
 ScalateKeys.scalateTemplateConfig in Compile := Seq(TemplateConfig(
-  baseDirectory.value / "src" / "main" / "scalate",
+  (sourceDirectory in Compile).value / "scalate",
   Seq(),
   Seq(Binding("helper", "xitrum.Action", importMembers = true))
 ))
