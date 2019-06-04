@@ -10,7 +10,7 @@ javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 //------------------------------------------------------------------------------
 
-libraryDependencies += "tv.cntt" %% "xitrum" % "3.28.16"
+libraryDependencies += "tv.cntt" %% "xitrum" % "3.28.17"
 
 // Xitrum uses SLF4J, an implementation of SLF4J is needed
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3"
@@ -36,7 +36,7 @@ ScalateKeys.scalateTemplateConfig in Compile := Seq(TemplateConfig(
 // xgettext i18n translation key string extractor is a compiler plugin ---------
 
 autoCompilerPlugins := true
-addCompilerPlugin("tv.cntt" %% "xgettext" % "1.5.2")
+addCompilerPlugin("tv.cntt" %% "xgettext" % "1.5.3")
 scalacOptions += "-P:xgettext:xitrum.I18n"
 
 // Put config directory in classpath for easier development --------------------
