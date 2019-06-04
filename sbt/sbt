@@ -1,2 +1,2 @@
 #!/bin/bash
-java -Xms256m -Xmx512m -Xss1m -XX:MaxMetaspaceSize=384m -XX:+CMSClassUnloadingEnabled -jar `dirname $0`/sbt-launch-1.2.1.jar "$@"
+java -Xms256m -Xmx512m -Xss1m -XX:MaxMetaspaceSize=384m -XX:+CMSClassUnloadingEnabled -jar `dirname $0`/sbt-launch-1.2.8.jar "$@"
