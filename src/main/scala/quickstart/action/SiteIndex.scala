@@ -4,7 +4,7 @@ import xitrum.annotation.GET
 
 @GET("")
 class SiteIndex extends DefaultLayout {
-  def execute() {
+  def execute(): Unit = {
     respondView()
   }
 }
