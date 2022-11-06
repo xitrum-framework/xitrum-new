@@ -10,7 +10,7 @@ javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 //------------------------------------------------------------------------------
 
-libraryDependencies += "tv.cntt" %% "xitrum" % "3.30.1"
+libraryDependencies += "tv.cntt" %% "xitrum" % "3.30.2"
 
 // Xitrum uses SLF4J, an implementation of SLF4J is needed
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3"
@@ -28,8 +28,8 @@ libraryDependencies += "tv.cntt" %% "xitrum-scalate" % "2.9.2"
 
 import org.fusesource.scalate.ScalatePlugin._
 scalateSettings
-ScalateKeys.scalateTemplateConfig in Compile := Seq(TemplateConfig(
-  (sourceDirectory in Compile).value / "scalate",
+Compile / ScalateKeys.scalateTemplateConfig := Seq(TemplateConfig(
+  (Compile / sourceDirectory).value / "scalate",
   Seq(),
   Seq(Binding("helper", "xitrum.Action", importMembers = true))
 ))
@@ -43,10 +43,12 @@ scalacOptions += "-P:xgettext:xitrum.I18n"
 // Put config directory in classpath for easier development --------------------
 
 // For "sbt console"
-unmanagedClasspath in Compile += baseDirectory.value / "config"
+Compile / unmanagedClasspath += baseDirectory.value / "config"
 
 // For "sbt fgRun"
-unmanagedClasspath in Runtime += baseDirectory.value / "config"
+Runtime / unmanagedClasspath += baseDirectory.value / "config"
 
 // Copy these to target/xitrum when sbt xitrum-package is run
 XitrumPackage.copy("config", "public", "script")
+
+fork := true
